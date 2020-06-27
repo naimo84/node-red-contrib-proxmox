@@ -1,0 +1,58 @@
+<script type="text/javascript">
+    RED
+        .nodes
+        .registerType('proxmox-config', {
+            category: 'config',
+            defaults: {
+                name: {
+                    value: ""
+                },
+                host:{
+                    value:""
+                }
+            },
+            credentials: {
+                username: { type: "text" },
+                password: { type: "password" }
+            },
+
+            label: function () {
+                if (this.name) {
+                    return this.name;
+                }
+                return "Config";
+            }
+
+        });
+</script>
+
+<script type="text/x-red" data-template-name="proxmox-config">
+
+    <div class="form-row">
+        <label for="node-config-input-host" style="width:160px !important">
+            <i class="fa fa-user"></i>
+            <span>host:</span></label>
+        <input type="text" id="node-config-input-host" placeholder="" style="width:280px !important">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-username" style="width:160px !important">
+            <i class="fa fa-user"></i>
+            <span>userName:</span></label>
+        <input type="text" id="node-config-input-username" placeholder="" style="width:280px !important">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password" style="width:160px !important">
+            <i class="fa fa-user"></i>
+            <span>password:</span></label>
+        <input type="password" id="node-config-input-password" placeholder="" style="width:280px !important">
+    </div>
+    <hr/>
+    <div class="form-tips">     
+        <i class="fas fa-exclamation"></i>
+            <b>IMPORTANT:</b> Tip.                      
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="proxmox-config">
+
+</script>
