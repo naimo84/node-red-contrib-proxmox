@@ -1,12 +1,12 @@
 <script type="text/javascript">
     RED
         .nodes
-        .registerType('template-node', {
-            category: 'template',
+        .registerType('proxmox-node', {
+            category: 'proxmox',
             defaults: {
                 confignode: {
                     value: "",
-                    type: "template-config",
+                    type: "proxmox-config",
                     required: true
                 }
             },
@@ -19,10 +19,10 @@
                 } else if (this.confignode.name) {
                     return this.confignode.name;
                 }
-                return "template";
+                return "proxmox";
             },
-            icon: "template.png",
-            paletteLabel: "template",
+            icon: "proxmox.png",
+            paletteLabel: "proxmox",
             oneditprepare: function () {
                 var node = this;
 
@@ -34,13 +34,13 @@
         });
 </script>
 
-<script type="text/x-red" data-template-name="template-node">
+<script type="text/x-red" data-tempplate-name="proxmox-node">
     <div class="form-row">
         <label for="node-input-confignode"><i class="fa fa-globe"></i> <span>Config</span></label>
         <input type="text" id="node-input-confignode">
     </div>  
 </script>
 
-<script type="text/x-red" data-help-name="template-node">
+<script type="text/x-red" data-help-name="proxmox-node">
   
 </script>

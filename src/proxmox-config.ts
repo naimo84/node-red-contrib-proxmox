@@ -9,5 +9,5 @@ module.exports = function (RED: any) {
 
   
 
-    RED.nodes.registerType("template-config", config);
+    RED.nodes.registerType("proxmox-config", config);
 }

@@ -30,10 +30,10 @@ First of all install [Node-RED](http://nodered.org/docs/getting-started/installa
 $ sudo npm install -g node-red
 # Then open  the user data directory  `~/.node-red`  and install the package
 $ cd ~/.node-red
-$ npm install node-red-contrib-template
+$ npm install node-red-contrib-proxmox
 ```
 
-Or search template in the manage palette menu
+Or search proxmox in the manage palette menu
 
 Then run
 
@@ -45,12 +45,12 @@ node-red
 Have an idea? Found a bug? See [how to contribute][contributing].
 
 ```sh
-git clone https://github.com/naimo84/node-red-contrib-template.git
-cd /path/to/node-red-contrib-template
+git clone https://github.com/naimo84/node-red-contrib-proxmox.git
+cd /path/to/node-red-contrib-proxmox
 npm install
 gulp
 cd ~/.node-red 
-npm install /path/to/node-red-contrib-template
+npm install /path/to/node-red-contrib-proxmox
 ```
 
 ## :memo: Documentation

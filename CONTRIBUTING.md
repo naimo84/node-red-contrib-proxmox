@@ -60,5 +60,5 @@ Thanks! :sweat_smile:
 
 
 
-[1]: https://github.com/naimo84/node-red-contrib-template/issues
+[1]: https://github.com/naimo84/node-red-contrib-proxmox/issues
 
