@@ -38,7 +38,7 @@
     "start": "gulp && node-red",
     "release": "standard-version",
     "release-minor": "standard-version --release-as minor",
-    "dev": "gulp develop",
+    "watch": "gulp --watch",
     "build": "gulp"
   },
   "husky": {

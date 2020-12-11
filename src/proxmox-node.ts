@@ -16,8 +16,6 @@ module.exports = function (RED: Red) {
         node.on('input', async (msg) => {
             let data = await prox.storage.list(null);
             node.send({ payload: data })
-
-
         });
 
     }

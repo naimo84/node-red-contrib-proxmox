@@ -24,6 +24,16 @@ gulp.task("copy-assets", function () {
         .pipe(gulp.dest(paths.dist + "/icons"));
 });
 
+gulp.watch('src/**/*.ts',()=>{
+    return tsProject
+    .src()
+    .pipe(sourcemaps.init())
+    .pipe(tsProject())
+    .js
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(paths.dist));
+})
+
 gulp.task('develop', function (done) {
     var stream = nodemon({
         legacyWatch:true,
