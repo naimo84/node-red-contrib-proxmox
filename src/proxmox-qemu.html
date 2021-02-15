@@ -1,14 +1,17 @@
 <script type="text/javascript">
     RED
         .nodes
-        .registerType('proxmox-node', {
+        .registerType('proxmox-qemu', {
             category: 'proxmox',
             defaults: {
                 confignode: {
                     value: "",
                     type: "proxmox-config",
                     //required: true
-                }
+                },
+                action: {},
+                qemuId: {},
+                node: {}
             },
             inputs: 1,
             outputs: 1,
@@ -19,10 +22,10 @@
                 } else if (this.confignode.name) {
                     return this.confignode.name;
                 }
-                return "proxmox";
+                return "proxmox qemu";
             },
             icon: "proxmox.png",
-            paletteLabel: "proxmox",
+            paletteLabel: "qemu",
             oneditprepare: function () {
                 var node = this;
 
@@ -34,13 +37,25 @@
         });
 </script>
 
-<script type="text/x-red" data-template-name="proxmox-node">
+<script type="text/x-red" data-template-name="proxmox-qemu">
     <div class="form-row">
         <label for="node-input-confignode"><i class="fa fa-globe"></i> <span>Config</span></label>
         <input type="text" id="node-input-confignode">
     </div>  
+    <div class="form-row">
+        <label for="node-input-node"><i class="fa fa-globe"></i> <span>node</span></label>
+        <input type="text" id="node-input-node">
+    </div>  
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa fa-globe"></i> <span>action</span></label>
+        <input type="text" id="node-input-action">
+    </div>  
+    <div class="form-row">
+        <label for="node-input-qemuId"><i class="fa fa-globe"></i> <span>qemuId</span></label>
+        <input type="text" id="node-input-qemuId">
+    </div>  
 </script>
 
-<script type="text/x-red" data-help-name="proxmox-node">
-  
+<script type="text/x-red" data-help-name="proxmox-qemu">
+
 </script>
