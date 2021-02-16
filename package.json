@@ -1,6 +1,6 @@
 {
   "name": "@naimo84/node-red-contrib-proxmox",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeRed proxmox",
   "author": {
     "name": "naimo84",
@@ -53,7 +53,7 @@
     "url": "https://paypal.me/NeumannBenjamin"
   },
   "dependencies": {
-    "@naimo84/proxmox": "^0.1.0",
+    "@naimo84/proxmox": "^0.1.1",
     "debug": "^4.1.1"
   },
   "devDependencies": {
