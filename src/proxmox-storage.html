@@ -1,14 +1,20 @@
 <script type="text/javascript">
     RED
         .nodes
-        .registerType('proxmox-node', {
+        .registerType('proxmox-storage', {
             category: 'proxmox',
             defaults: {
                 confignode: {
                     value: "",
                     type: "proxmox-config",
                     //required: true
-                }
+                },
+                data:{},
+                datatype:{},
+                storage:{},
+                storagetype:{},
+                action:{}
+
             },
             inputs: 1,
             outputs: 1,
@@ -19,10 +25,10 @@
                 } else if (this.confignode.name) {
                     return this.confignode.name;
                 }
-                return "proxmox";
+                return "proxmox storage";
             },
             icon: "proxmox.png",
-            paletteLabel: "proxmox",
+            paletteLabel: "proxmox storage",
             oneditprepare: function () {
                 var node = this;
 
@@ -30,17 +36,44 @@
                     var config = $('#node-input-confignode').val()
                     node.confignode = config;
                 });
+
+                $("#node-input-data").typedInput({
+                    types: ["msg", "json"],
+                    typeField: "#node-input-datatype"
+                });
+                $("#node-input-storage").typedInput({
+                    types: ["msg","str"],
+                    typeField: "#node-input-storagetype"
+                });
             }
         });
 </script>
 
-<script type="text/x-red" data-template-name="proxmox-node">
+<script type="text/x-red" data-template-name="proxmox-storage">
     <div class="form-row">
         <label for="node-input-confignode"><i class="fa fa-globe"></i> <span>Config</span></label>
         <input type="text" id="node-input-confignode">
     </div>  
+    <div class="form-row event">
+        <label for="node-input-action"><i class="fa fa-clock-o"></i> <span>action</span></label>        
+        <select id="node-input-action">          
+          <option value="get">get</option>
+          <option value="enable">enable/disable</option>
+          
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-storage"><i class="fa fa-globe"></i> <span>storage</span></label>
+        <input type="text" id="node-input-storage">
+        <input type="text" id="node-input-storagetype">
+    </div>  
+    <div class="form-row">
+        <label for="node-input-data"><i class="fa fa-globe"></i> <span>data</span></label>
+        <input type="text" id="node-input-data">
+        <input type="text" id="node-input-datatype">
+    </div>  
 </script>
 
-<script type="text/x-red" data-help-name="proxmox-node">
+<script type="text/x-red" data-help-name="proxmox-storage">
   
 </script>

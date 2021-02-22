@@ -28,6 +28,7 @@
     "nodes": {
       "proxmox-config": "dist/proxmox-config.js",
       "proxmox-node": "dist/proxmox-node.js",
+      "proxmox-storage": "dist/proxmox-storage.js",
       "proxmox-qemu": "dist/proxmox-qemu.js"
     }
   },

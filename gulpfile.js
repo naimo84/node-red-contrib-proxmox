@@ -1,6 +1,5 @@
 var gulp = require("gulp");
 var ts = require("gulp-typescript");
-var tsProject = ts.createProject("tsconfig.json");
 var sourcemaps = require('gulp-sourcemaps');
 var nodemon = require('gulp-nodemon');
 var watch = require('gulp-watch');
@@ -77,6 +76,7 @@ gulp.task("default", gulp.series(
     gulp.parallel('copy-html'),
     gulp.parallel('copy-assets'),
     () => {
+        var tsProject = ts.createProject("tsconfig.json");
         return tsProject.src()
             .pipe(sourcemaps.init())
             .pipe(tsProject())
