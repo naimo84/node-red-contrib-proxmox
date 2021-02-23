@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/naimo84/node-red-contrib-proxmox/compare/v0.0.5...v0.0.6) (2021-02-23)
+
+
+### Features
+
+* enable/disable storage ([f50cdb2](https://github.com/naimo84/node-red-contrib-proxmox/commit/f50cdb255a5ab44cde78c71c32d4f4334a3b017e))
+
 ### [0.0.5](https://github.com/naimo84/node-red-contrib-proxmox/compare/v0.0.4...v0.0.5) (2021-02-22)
 
 

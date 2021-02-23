@@ -1,6 +1,6 @@
 {
   "name": "@naimo84/node-red-contrib-proxmox",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "NodeRed proxmox",
   "author": {
     "name": "naimo84",
