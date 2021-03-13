@@ -9,9 +9,13 @@ module.exports = function (RED: Red) {
         let configNode = RED.nodes.getNode(config.confignode) as any;
 
         let node = this;
-        let prox = new Proxmox(configNode.credentials.username, configNode.credentials.password, configNode.host);
-        node.action = config.action;
+        let prox = new Proxmox({
+            username: configNode.credentials.username,
+            password: configNode.credentials.password,
+            hostname: configNode.host
+        });
 
+        node.action = config.action;
 
         node.on('input', async (msg, send, done) => {
             node.data = RED.util.evaluateNodeProperty(config.data, config.datatype, node, msg);

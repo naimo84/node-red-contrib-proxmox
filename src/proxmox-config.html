@@ -13,7 +13,8 @@
             },
             credentials: {
                 username: { type: "text" },
-                password: { type: "password" }
+                password: { type: "password" },
+                token: { type: "password"}
             },
 
             label: function () {
@@ -27,7 +28,12 @@
 </script>
 
 <script type="text/x-red" data-template-name="proxmox-config">
-
+    <div class="form-row">
+        <label for="node-config-input-name" style="width:160px !important">
+            <i class="fa fa-user"></i>
+            <span>name:</span></label>
+        <input type="text" id="node-config-input-name" placeholder="" style="width:280px !important">
+    </div>
     <div class="form-row">
         <label for="node-config-input-host" style="width:160px !important">
             <i class="fa fa-user"></i>
@@ -46,10 +52,11 @@
             <span>password:</span></label>
         <input type="password" id="node-config-input-password" placeholder="" style="width:280px !important">
     </div>
-    <hr/>
-    <div class="form-tips">     
-        <i class="fas fa-exclamation"></i>
-            <b>IMPORTANT:</b> Tip.                      
+    <div class="form-row">
+        <label for="node-config-input-token" style="width:160px !important">
+            <i class="fa fa-user"></i>
+            <span>token:</span></label>
+        <input type="password" id="node-config-input-token" placeholder="" style="width:280px !important">
     </div>
 </script>
 

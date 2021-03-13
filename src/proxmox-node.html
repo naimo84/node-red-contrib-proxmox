@@ -8,7 +8,10 @@
                     value: "",
                     type: "proxmox-config",
                     //required: true
-                }
+                },
+                action: {},
+                node: {},
+                nodetype: {}
             },
             inputs: 1,
             outputs: 1,
@@ -25,10 +28,14 @@
             paletteLabel: "node",
             oneditprepare: function () {
                 var node = this;
-
                 $('#node-input-confignode').change(function () {
                     var config = $('#node-input-confignode').val()
                     node.confignode = config;
+                });
+                
+                $("#node-input-node").typedInput({
+                    types: ["msg", "str"],
+                    typeField: "#node-input-nodetype"
                 });
             }
         });
@@ -38,6 +45,15 @@
     <div class="form-row">
         <label for="node-input-confignode"><i class="fa fa-globe"></i> <span>Config</span></label>
         <input type="text" id="node-input-confignode">
+    </div>  
+    <div class="form-row">
+        <label for="node-input-node"><i class="fa fa-globe"></i> <span>node</span></label>
+        <input type="text" id="node-input-node">
+        <input type="text" id="node-input-nodetype">
+    </div>  
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa fa-globe"></i> <span>action</span></label>
+        <input type="text" id="node-input-action">
     </div>  
 </script>
 

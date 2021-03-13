@@ -8,7 +8,12 @@ module.exports = function (RED: Red) {
         let configNode = RED.nodes.getNode(config.confignode) as any;
 
         let node = this;
-        let prox = new Proxmox(configNode.credentials.username, configNode.credentials.password, configNode.host);
+        let prox = new Proxmox({
+            username: configNode.credentials.username,
+            password: configNode.credentials.password,
+            hostname: configNode.host
+        });
+
         node.action = config.action;
         node.qemuId = config.qemuId;
         node.node = config.node;

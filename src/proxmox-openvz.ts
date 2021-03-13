@@ -11,8 +11,12 @@ module.exports = function (RED: Red) {
         //     return;
         // }
         let node = this;
-        let prox = new Proxmox(configNode.credentials.username, configNode.credentials.password, configNode.host);
-        // node.config = configNode;
+        let prox = new Proxmox({
+            username: configNode.credentials.username,
+            password: configNode.credentials.password,
+            hostname: configNode.host
+        });
+
         node.on('input', async (msg) => {
             let data = await prox.storage.list();
             node.send({ payload: data })

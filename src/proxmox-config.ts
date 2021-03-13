@@ -6,6 +6,7 @@ module.exports = function (RED: any) {
         RED.nodes.createNode(node, config);
 
         node.host = config.host;
+        node.name = config.name;
     }
 
   
